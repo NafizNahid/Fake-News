@@ -1,0 +1,72 @@
+{% extends 'mlapp/base.html' %}
+
+{% load static %}
+
+{% block title%} Mlapp{% endblock %}
+{% block body %}
+
+<main role="main"></br>
+    <h3 align="center">The Detection result is here</h3>
+    <div class="container my-6">
+
+        <div class="row">
+            {% if result == 0 %}
+            <div class="col-md-5">
+            </br>
+        </br>
+        </br>
+        </br>
+                <img src="savedModels\fake.jpg" alt="" width="385px" height="275px" class="rounded-circle">
+            </div>
+            {% endif %}
+            {% if result == 1 %}
+            <div class="col-md-5">
+                </br>
+                </br>
+                </br>
+                </br>
+                <img src="savedModels\real.jpeg" alt="" width="385px" height="275px" class="rounded-circle">
+            </div>
+            {% endif %}
+
+            <div class="col-md-6">
+                </br>
+                {% if result == 0 %}
+                <h5>Detected result of your news is: <span class="text-danger"> Fake News</span> </h5>
+                {% endif %}
+                {% if result == 1 %}
+                <h5>Detected result of your news is: <span class="text-success">Real News</span></h5>
+                {% endif %}
+                </br>
+                <h5>The news: </h5>
+                </br>
+                <h6><span>"{{news}}"</span> </h6>
+            </div>
+        </div>
+        </br>
+        <div class="d-flex justify-content-center row">
+            <a href="http://127.0.0.1:8888/" class="btn btn-warning mx-3 "><b>Go Back to Mlapp</b></a>
+        </div>
+    </div>
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+    <hr>
+
+    </div> <!-- /container -->
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script src="/docs/4.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'mlapp/base.html' %}
+
+{% load static %}
+
+{% block title%} Mlapp{% endblock %}
+{% block body %}
+
+<div class="container">
+    <div class="col my-1">
+        <br>
+        <h2 align="center">Fake News Detector</h2>
+        <hr>
+        <br>
+        <br>
+        </div>
+        <form method="post" action="#">{% csrf_token %}
+
+            <div class="form-group col-md-13" ,>
+                <label for="inputname">News :</label>
+                <br>
+                <br>
+                <input type="text" class="form-control" name="News" placeholder="Write your news here" required>
+            </div>
+            <br>
+            <br>
+    </div>
+    <div class="d-flex justify-content-center row">
+        <button type="submit" class="btn btn-warning">Detect</button>
+    </div>
+    </form>
+</div>
+</div>
+
+{% endblock %}
